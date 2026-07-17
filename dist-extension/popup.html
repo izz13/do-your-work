@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do Your Work</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        margin: 0;
+        padding: 16px;
+        min-width: 320px;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+      .card {
+        display: grid;
+        gap: 12px;
+      }
+      button {
+        border: none;
+        border-radius: 8px;
+        padding: 10px 12px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .primary { background: #2563eb; color: white; }
+      .secondary { background: #1f2937; color: #f9fafb; }
+      .muted { color: #94a3b8; font-size: 12px; }
+    </style>
+    <script type="module" crossorigin src="/popup.js"></script>
+    <link rel="modulepreload" crossorigin href="/storage.js">
+  </head>
+  <body>
+    <div class="card">
+      <h2 style="margin:0; font-size:18px;">Do Your Work</h2>
+      <p style="margin:0;">Stay focused by blocking distracting sites while you work.</p>
+      <button id="open-app" class="primary">Open the app screen</button>
+      <button id="toggle" class="secondary">Enable focus mode</button>
+      <button id="clear" class="secondary">Clear blocked list</button>
+      <div id="status" class="muted">Loading…</div>
+    </div>
+  </body>
+</html>

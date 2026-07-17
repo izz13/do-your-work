@@ -1,0 +1,5 @@
+var e=`do-your-work-overlay`;function t(){if(document.getElementById(e))return;let t=document.createElement(`div`);t.id=e,t.style.position=`fixed`,t.style.inset=`0`,t.style.background=`linear-gradient(135deg, #0f172a 0%, #111827 100%)`,t.style.color=`#f8fafc`,t.style.zIndex=`2147483647`,t.style.display=`flex`,t.style.alignItems=`center`,t.style.justifyContent=`center`,t.style.flexDirection=`column`,t.style.padding=`24px`,t.innerHTML=`
+    <h1 style="font-size: 2rem; margin-bottom: 12px;">Do Your Work</h1>
+    <p style="font-size: 1rem; margin-bottom: 16px; max-width: 480px; text-align: center;">This site is blocked while focus mode is on. Pick one real task and get started.</p>
+    <button id="focus-reset" style="padding: 10px 14px; border-radius: 999px; border: none; background: #2563eb; color: white; cursor: pointer; font-weight: 600;">Back to work</button>
+  `,t.querySelector(`#focus-reset`)?.addEventListener(`click`,()=>{t.remove()}),document.documentElement.appendChild(t)}function n(){document.getElementById(e)?.remove()}chrome.runtime.onMessage.addListener(e=>{e?.type===`BLOCK_PAGE`&&t()}),window.addEventListener(`beforeunload`,n);

@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
+import globalStyles from "../styles.css?inline";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -89,13 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/109eaf71-5b0c-4326-bca2-5202ec01ae60/id-preview-e4fb84a2--d8a27073-1e88-4a94-bb65-7e144c6cccad.lovable.app-1783967652260.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/109eaf71-5b0c-4326-bca2-5202ec01ae60/id-preview-e4fb84a2--d8a27073-1e88-4a94-bb65-7e144c6cccad.lovable.app-1783967652260.png" },
     ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-    ],
+    links: [{ rel: "icon", href: "/favicon.ico", type: "image/x-icon" }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -108,6 +102,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <style>{globalStyles}</style>
       </head>
       <body>
         {children}
